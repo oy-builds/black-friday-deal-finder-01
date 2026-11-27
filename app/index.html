@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DealCheck — Black Friday 2026 price-checked deals</title>
+<meta name="description" content="Black Friday and Cyber Monday deals checked by hand on 27 November 2026, with an honest verdict on whether each one is really a deal.">
+<link rel="stylesheet" href="style.css">
+<script type="module" src="app.js"></script>
+</head>
+<body>
+<noscript><p style="max-width:1180px;margin:16px auto;padding:12px 20px;color:#f2ede4">DealCheck needs JavaScript to list and filter its 30 checked deals. The deals themselves are in app/deals.js.</p></noscript>
+<header class="masthead">
+  <div class="masthead-inner">
+    <div>
+      <p class="kicker">Black Friday &middot; Cyber Monday 2026</p>
+      <h1>DealCheck</h1>
+      <p class="tagline">Every price on this page was checked by hand on <strong>27 Nov 2026</strong>. No inflated &ldquo;was&rdquo; prices taken on trust &mdash; each deal carries a verdict: a real new low, a strong price, or a routine sale dressed up as one.</p>
+    </div>
+    <dl class="stats" id="stats">
+      <div><dt>Deals checked</dt><dd id="stat-deals">&ndash;</dd></div>
+      <div><dt>New lows</dt><dd id="stat-lows">&ndash;</dd></div>
+      <div><dt>Total saving</dt><dd id="stat-saving">&ndash;</dd></div>
+      <div><dt>Stores</dt><dd id="stat-stores">&ndash;</dd></div>
+    </dl>
+  </div>
+</header>
+
+<section class="controls" aria-label="Find a deal">
+  <div class="controls-row">
+    <label class="search-box">
+      <span class="visually-hidden">Search deals</span>
+      <input id="search" type="search" placeholder="Search a product, brand or store&hellip; e.g. AirPods" autocomplete="off">
+    </label>
+    <label>Sort
+      <select id="sort">
+        <option value="score">Best deal first</option>
+        <option value="discount">Biggest % off</option>
+        <option value="saving">Biggest $ saving</option>
+        <option value="price-asc">Lowest price</option>
+        <option value="price-desc">Highest price</option>
+      </select>
+    </label>
+    <label>Min. discount
+      <select id="min-discount">
+        <option value="0">Any discount</option>
+        <option value="20">20% off or more</option>
+        <option value="30">30% off or more</option>
+        <option value="40">40% off or more</option>
+        <option value="50">50% off or more</option>
+      </select>
+    </label>
+    <label>Store
+      <select id="store-filter">
+        <option value="">All stores</option>
+      </select>
+    </label>
+    <label class="lows-only">
+      <input id="lows-only" type="checkbox"> New lows only
+    </label>
+  </div>
+  <div class="chips" id="category-chips" role="group" aria-label="Filter by category"></div>
+  <p class="result-line" id="result-line" aria-live="polite"></p>
+</section>
+
+<main>
+  <div class="deal-grid" id="deal-grid"></div>
+  <p class="empty" id="empty" hidden>No deals match. Loosen a filter or clear the search.</p>
+</main>
+
+<footer class="method">
+  <h2>How these deals were checked</h2>
+  <p>Each price was read on 27 November 2026 from the named store or from a deals report that names the store (9to5Toys, 9to5Mac, Product Bible, PopSci, DealNews, AppleInsider, Digital Trends, 2ndShift, Home Automation Weekly and the stores&rsquo; own Black Friday announcements). The &ldquo;usual&rdquo; price is the store&rsquo;s list price or the typical selling price the source quoted; where a list price looks inflated, the verdict says so. Prices change and stock runs out &mdash; the store link always shows the live price, so check it before you buy.</p>
+  <p class="verdict-key"><strong>Verdict key:</strong>
+    <span class="badge badge-low">NEW LOW</span> lowest price the sources have tracked for this item.
+    <span class="badge badge-strong">STRONG PRICE</span> a genuine cut, well below the usual price.
+    <span class="badge badge-routine">ROUTINE SALE</span> the discount is real but the &ldquo;was&rdquo; price is inflated or the price was this low before.
+  </p>
+  <p class="fineprint">DealCheck is an independent price-check page. It is not affiliated with Amazon, Best Buy, Dell, Google, Target or any brand shown. Store names and product names belong to their owners. Prices in US dollars, checked 27 Nov 2026, 06:45 UTC. Built as static files; no tracking, no network requests.</p>
+</footer>
+</body>
+</html>
